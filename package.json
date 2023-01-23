@@ -2,7 +2,7 @@
   "name": "sequelizetrybe",
   "version": "1.0.0",
   "description": "",
-  "main": "srs/server.js",
+  "main": "src/server.js",
   "scripts": {
     "dev":"nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
