@@ -1,26 +1,34 @@
-// src/config/config.js
-
 require('dotenv').config();
 
-const config = {
-  username: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  host: process.env.MYSQL_HOST,
-  dialect: 'mysql',
-};
+const { DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_DIALECT } = process.env;
 
-module.exports = {
+const config = {
   development: {
-    ...config,
-    database: 'employees_associations_development',
+    username: DB_USER || 'root',
+    password: DB_PASSWORD || 'password',
+    database: DB_NAME || 'orm_trybe',
+    host: DB_HOST || 'localhost',
+    port: 3306,
+    dialect: DB_DIALECT || 'mysql',
   },
   test: {
-    ...config,
-    database: 'employees_associations_test',
-    logging: false,
+    username: DB_USER || 'root',
+    password: DB_PASSWORD || 'password',
+    database: DB_NAME || 'orm_trybe',
+    host: DB_HOST || 'localhost',
+    port: 3306,
+    dialect: DB_DIALECT || 'mysql',
   },
   production: {
-    ...config,
-    database: 'employees_associations_production',
+    username: DB_USER || 'root',
+    password: DB_PASSWORD || 'password',
+    database: DB_NAME || 'orm_trybe',
+    host: DB_HOST || 'localhost',
+    port: 3306,
+    dialect: DB_DIALECT || 'mysql',
   },
 };
+
+console.log(config);
+
+module.exports = config;
