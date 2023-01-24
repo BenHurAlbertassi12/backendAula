@@ -34,6 +34,12 @@ module.exports = {
           number: 101,
           employee_id: 4,
         },
+        {
+          city: 'Volta Redonda',
+          street: 'Rua Sei Lá',
+          number: 11,
+          employee_id: 2,
+        },
       ],
       {},
     );
