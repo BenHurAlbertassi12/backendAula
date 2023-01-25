@@ -1,8 +1,13 @@
-
-
 const { Course } = require('../models');
+const { Student } = require('../models');
 
-const getCourses = async () => Course.findAll();
+const getCourses = async () => Course.findAll(
+    {
+        include: [
+            { model: Student },
+        ],
+    },
+);
 
 const createCourse = async ({
     name,
